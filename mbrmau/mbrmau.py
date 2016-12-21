@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import calendar
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment, PackageLoader
 
 
 class Mbrmau:
@@ -15,8 +15,9 @@ class Mbrmau:
             list(map(lambda n: '%d/%d/%d' % (year, month, n[0]), workdays))
 
     def message(self):
-        env = Environment(loader=FileSystemLoader('./', encoding='utf8'))
-        tpl = env.get_template('mbrmau/message.tpl')
+        pl = PackageLoader('mbrmau', './', encoding='utf8')
+        env = Environment(loader=pl)
+        tpl = env.get_template('message.tpl')
 
         tpl_variables = {
                 "days": self.__workdays
