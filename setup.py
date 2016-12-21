@@ -16,7 +16,7 @@ setup(
     license="MIT",
     author="toshiya-i",
     packages=find_packages(exclude=['tests*']),
-    data_files=[('my_data', ['data/template/message.tpl'])],
+    package_data={'mbrmau': ['message.tpl']},
     install_requires=["Jinja2", "python-dateutil"],
     long_description=long_description,
     classifiers=[

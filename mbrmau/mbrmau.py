@@ -16,7 +16,7 @@ class Mbrmau:
 
     def message(self):
         env = Environment(loader=FileSystemLoader('./', encoding='utf8'))
-        tpl = env.get_template('my_data/message.tpl')
+        tpl = env.get_template('mbrmau/message.tpl')
 
         tpl_variables = {
                 "days": self.__workdays
